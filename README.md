@@ -227,9 +227,7 @@ class GitChain:
         return status
 ```
 
-The audit_diff method takes a DiffData object as an argument, which represents the differences in the code that need to be audited. The first line inside the method creates a HumanMessage object from the content of the DiffData object by calling the _get_diff_content method, which combines all the diffs into a single string. Next, the method invokes the LLM with a system message prompt for code auditing and the human message. The LLM's response is stored in ai_msg. If ai_msg is a string, it is used as is; otherwise, the content of ai_msg is used. The method then calls _get_status_from_message with output_message as the argument. This method invokes the LLM with tools using the output_message as input and
-
-gets the tool output. The method returns the tool output status and the output_message. In summary, the audit_diff method audits code differences using a Language Learning Model and a set of tools, and returns the audit status and the AI message content.
+The audit_diff method takes a DiffData object as an argument, which represents the differences in the code that need to be audited. The first line inside the method creates a HumanMessage object from the content of the DiffData object by calling the _get_diff_content method, which combines all the diffs into a single string. Next, the method invokes the LLM with a system message prompt for code auditing and the human message. The LLM's response is stored in ai_msg. If ai_msg is a string, it is used as is; otherwise, the content of ai_msg is used. The method then calls _get_status_from_message with output_message as the argument. This method invokes the LLM with tools using the output_message as input and gets the tool output. The method returns the tool output status and the output_message. In summary, the audit_diff method audits code differences using a Language Learning Model and a set of tools, and returns the audit status and the AI message content.
 
 Now I can invoke the chain to audit the code and print the results. Also, I can use the score to perform an action.
 
@@ -275,4 +273,3 @@ By using tools like LangChain and LLM models, we can automate the generation of 
 code audits based on git diffs. This not only saves time but also ensures consistency and accuracy in commit 
 messages and code reviews. As we continue to explore and implement these AI-driven solutions, we open up new 
 possibilities for more efficient and effective software development practices. It is not magic, it is just code.
-
