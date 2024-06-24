@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "ia-git"
+version = "0.1.0"
+description = ""
+authors = ["Gonzalo Ayuso <gonzalo123@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+langchain = "^0.2.5"
+langchain-openai = "^0.1.9"
+langchain-community = "^0.2.5"
+langchain-groq = "^0.1.5"
+rich = "^13.7.1"
+click = "^8.1.7"
+gitpython = "^3.1.43"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+flake8 = "^7.1.0"
+bandit = "^1.7.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
